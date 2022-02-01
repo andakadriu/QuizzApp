@@ -1,0 +1,65 @@
+﻿@model QuizA.Models.tbl_questions
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <script src="~/Scripts/bootstrap.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <meta name="viewport" content="width=device-width" />
+<script src="~/Scripts/bootstrap.min.js"></script>
+    <title>StartQuiz</title>
+    <style>
+        body{
+            background-color:pink;
+        }
+    </style>
+
+</head>
+<body>
+    <h1 style="text-align:center;color:hotpink">Welcome to our quiz</h1>
+    <hr />  <hr />
+            <h1 style="text-align:center;color:deeppink">GOOD LUCK</h1>
+            <hr />
+
+    @using (Html.BeginForm()) 
+    {
+        @Html.AntiForgeryToken()
+        
+    <div class="row">
+        <div class="container" style="margin:0 auto;margin-top:200px">
+            <div class="row">
+                @Html.DisplayFor(x => x.q_text)
+            </div>
+            <div class="row">
+                <h3>@Html.RadioButtonFor(x => x.QA, new { @class = "form-control" })@Model.QA </h3>
+            </div>
+
+            <div class="row">
+                <h3>@Html.RadioButtonFor(x => x.QB, new { @class = "form-control" })@Model.QB </h3>
+            </div>
+
+            <div class="row">
+                <h3>@Html.RadioButtonFor(x => x.QC, new { @class = "form-control" })@Model.QC </h3>
+            </div>
+
+            <div class="row">
+                <h3>@Html.RadioButtonFor(x => x.QD, new { @class = "form-control" })@Model.QD </h3>
+            </div>
+            <div class="row">
+                <input type="submit" class="btn btn-default" value="Submit" style="background-color:deeppink;border:1px solid deeppink" />
+                <br /><br /><br /><br /><br /><br /><br />
+            </div>
+        </div>
+    </div>
+    }
+    
+    <div>
+        @Html.ActionLink("Back to List", "Index")
+    </div>
+</body>
+</html>

@@ -1,0 +1,31 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+
+    <style>        body {
+            background-image: url("/Content/img/endExam.png");
+            background-size: cover;
+        }
+    </style>
+
+    <meta name="viewport" content="width=device-width" />
+    <title>EndExam</title>
+    <link href="~/Content/Site.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+
+</head>
+<body>
+    <div>
+
+        <h1 style="text-align:center">End of Examination!!</h1>
+        <h2 style="text-align:center">Your score is @TempData["score"]</h2>
+    </div>
+</body>
+</html>
